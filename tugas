@@ -1,0 +1,104 @@
+# WEEK 2 ASSIGNMENT - Python
+# Nama: (Muhamad Syehan Firdaus s)
+# NIM: (20250040117)
+
+import math
+
+# 1. Split Bill Nongkrong
+def split_bill():
+    print("\n=== Split Bill Nongkrong ===")
+    total_tagihan = float(input("Masukkan total tagihan: "))
+    jumlah_orang = int(input("Masukkan jumlah orang: "))
+    pajak = 0.10
+    
+    total_setelah_pajak = total_tagihan + (total_tagihan * pajak)
+    per_orang = total_setelah_pajak / jumlah_orang
+    
+    print("Total setelah pajak:", total_setelah_pajak)
+    print("Bayar per orang:", per_orang)
+
+
+# 2. Konversi Waktu Kerja Freelance
+def freelance():
+    print("\n=== Konversi Waktu Freelance ===")
+    jam = int(input("Masukkan jam kerja: "))
+    menit = int(input("Masukkan menit kerja: "))
+    upah_per_jam = float(input("Masukkan upah per jam: "))
+    
+    total_jam = jam + (menit / 60)
+    total_bayar = total_jam * upah_per_jam
+    
+    print("Total jam (desimal):", total_jam)
+    print("Total bayaran:", total_bayar)
+
+
+# 3. Estimasi BBM Perjalanan
+def estimasi_bbm():
+    print("\n=== Estimasi BBM ===")
+    jarak = float(input("Masukkan jarak perjalanan (km): "))
+    konsumsi = 40  # 1 liter untuk 40 km
+    harga_per_liter = 13000
+    
+    liter_dibutuhkan = jarak / konsumsi
+    total_biaya = liter_dibutuhkan * harga_per_liter
+    
+    print("Liter dibutuhkan:", liter_dibutuhkan)
+    print("Total biaya bensin:", total_biaya)
+
+
+# 4. Gaji Bersih Karyawan
+def gaji_bersih():
+    print("\n=== Gaji Bersih ===")
+    gaji_pokok = float(input("Masukkan gaji pokok: "))
+    tunjangan = float(input("Masukkan tunjangan: "))
+    
+    bpjs = 0.02
+    pajak = 0.05
+    
+    potongan = (gaji_pokok * bpjs) + (gaji_pokok * pajak)
+    gaji_total = gaji_pokok + tunjangan - potongan
+    
+    print("Total potongan:", potongan)
+    print("Gaji bersih diterima:", gaji_total)
+
+
+# 5. Penyusutan Nilai Barang (Garis Lurus)
+def penyusutan():
+    print("\n=== Penyusutan Nilai Barang ===")
+    harga_awal = float(input("Masukkan harga awal: "))
+    nilai_sisa = float(input("Masukkan nilai sisa: "))
+    umur = int(input("Masukkan umur ekonomis (tahun): "))
+    
+    penyusutan_per_tahun = (harga_awal - nilai_sisa) / umur
+    nilai_setelah_2_tahun = harga_awal - (2 * penyusutan_per_tahun)
+    
+    print("Penyusutan per tahun:", penyusutan_per_tahun)
+    print("Nilai setelah 2 tahun:", nilai_setelah_2_tahun)
+
+
+# Menu
+while True:
+    print("\n===== MENU =====")
+    print("1. Split Bill")
+    print("2. Freelance")
+    print("3. Estimasi BBM")
+    print("4. Gaji Bersih")
+    print("5. Penyusutan")
+    print("0. Keluar")
+    
+    pilihan = input("Pilih menu: ")
+    
+    if pilihan == "1":
+        split_bill()
+    elif pilihan == "2":
+        freelance()
+    elif pilihan == "3":
+        estimasi_bbm()
+    elif pilihan == "4":
+        gaji_bersih()
+    elif pilihan == "5":
+        penyusutan()
+    elif pilihan == "0":
+        break
+    else:
+        print("Pilihan tidak valid.")
